@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
+using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace helloworld
@@ -15,9 +16,7 @@ namespace helloworld
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
-            //app.Run(async (context) => { await context.Response.WriteAsync($"Hello World: {context.Request.Path}"); });
+            app.Run(async (context) => { await context.Response.WriteAsync($"Hello World: {context.Request.Path}"); });
         }
 
         // Entry point for the application.

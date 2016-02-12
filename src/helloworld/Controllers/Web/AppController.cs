@@ -29,10 +29,11 @@ namespace helloworld.Controllers.Web
         [HttpPost]
         public IActionResult Contact(ContactViewModel contactViewModel)
         {
+            var email = Startup.Configuration["AppSettings:SiteEmailAddress"];
             this._mailService.SendMail(
-                Startup.Configuration["AppSettings:SiteEmailAddress"],
-                Startup.Configuration["AppSettings:SiteEmailAddress"],
-                $"Contact from {contactViewModel.Name} ({contactViewModel.Email})",
+                email,
+                email,
+                $"Contact from {contactViewModel.Name} ({contactViewModel.Email})", 
                 contactViewModel.Message);
             return View();
         }

@@ -3,8 +3,46 @@
 <head>
     <meta charset="utf-8" />
     <title>Hello World</title>
+
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-    <h1>hello world</h1>
+<div id="sidebar">
+    <img src="img/user1.jpg" alt="headshot" class="headshot"/>
+    <span id="username">Sam Hastings</span>
+    <ul class="menu">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>
+<div id="wrapper">
+    <div id="main">
+        <div>
+            <button id="sidebarToggle">Toggle Menu</button>
+        </div>
+        <h1>Hello World</h1>
+        <p>A website soon</p>
+        <form>
+            <div>
+                <label>Date</label>
+                <input/>
+            </div>
+            <div>
+                <label>Location</label>
+                <input/>
+            </div>
+            <div>
+                <input type="submit" value="add"/>
+            </div>
+        </form>
+    </div>
+    <div id="footer">
+        &copy; Hello World
+    </div>
+</div>
+    <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="js/site.js">
+</script>
 </body>
 </html>

@@ -30,8 +30,8 @@ namespace helloworld.Controllers.Web
         public IActionResult Contact(ContactViewModel contactViewModel)
         {
             this._mailService.SendMail(
-                "",
-                "",
+                Startup.Configuration["AppSettings:SiteEmailAddress"],
+                Startup.Configuration["AppSettings:SiteEmailAddress"],
                 $"Contact from {contactViewModel.Name} ({contactViewModel.Email})",
                 contactViewModel.Message);
             return View();

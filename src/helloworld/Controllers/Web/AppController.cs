@@ -1,10 +1,18 @@
-﻿using helloworld.ViewModels;
+﻿using helloworld.Services;
+using helloworld.ViewModels;
 using Microsoft.AspNet.Mvc;
 
 namespace helloworld.Controllers.Web
 {
     public class AppController : Controller
     {
+        private readonly IMailService _mailService;
+
+        public AppController(IMailService mailService)
+        {
+            this._mailService = mailService;
+        }
+
         public IActionResult Index()
         {
             return View();

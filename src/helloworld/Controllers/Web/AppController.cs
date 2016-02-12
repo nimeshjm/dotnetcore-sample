@@ -29,6 +29,11 @@ namespace helloworld.Controllers.Web
         [HttpPost]
         public IActionResult Contact(ContactViewModel contactViewModel)
         {
+            this._mailService.SendMail(
+                "",
+                "",
+                $"Contact from {contactViewModel.Name} ({contactViewModel.Email})",
+                contactViewModel.Message);
             return View();
         }
     }
